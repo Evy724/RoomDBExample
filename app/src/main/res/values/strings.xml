@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">RoomDBExample</string>
+    <string name="title_activity_insert">InsertActivity</string>
+</resources>
