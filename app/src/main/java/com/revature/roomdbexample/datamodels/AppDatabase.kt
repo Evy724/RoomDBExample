@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+
 import com.revature.roomdbexample.dao.CustomerData
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.internal.synchronized
@@ -18,7 +19,7 @@ abstract class AppDatabase: RoomDatabase() {
         @Volatile   //Anything that we write will be immediately available to the whole application
         private var INSTANCE: AppDatabase?= null
 
-        @OptIn(InternalCoroutinesApi::class)
+        @InternalCoroutinesApi
         fun getDatabase(context:Context):AppDatabase {
 
             val tempInstance = INSTANCE
