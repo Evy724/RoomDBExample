@@ -1,11 +1,11 @@
-package com.revature.roomdbexample.datamodels
+package com.revature.roomdbexample.model.datamodels
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-import com.revature.roomdbexample.dao.CustomerData
+import com.revature.roomdbexample.model.dao.CustomerData
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.internal.synchronized
 

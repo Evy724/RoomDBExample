@@ -7,9 +7,9 @@ import androidx.activity.compose.setContent
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.lifecycle.ViewModelProvider
+import com.revature.roomdbexample.view.SelectCustomerScreen
 import com.revature.roomdbexample.view.ui.theme.RoomDBExampleTheme
 import com.revature.roomdbexample.viewmodels.CustomerViewModel
-import com.revature.roomdbexample.widgets.CustomerList
 import kotlinx.coroutines.InternalCoroutinesApi
 
 //Prepare a screen for inserting a customer
@@ -36,7 +36,9 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
 
-                    CustomerList(customerViewModel)
+                    SelectCustomerScreen(customerViewModel)
+//                    InsertCustomerScreen(customerViewModel)
+//                    CustomerList(customerViewModel)
                 }
             }
         }

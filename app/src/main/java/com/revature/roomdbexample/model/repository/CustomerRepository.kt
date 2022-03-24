@@ -1,10 +1,10 @@
-package com.revature.roomdbexample.repository
+package com.revature.roomdbexample.model.repository
 
 import android.app.Application
 import androidx.lifecycle.LiveData
-import com.revature.roomdbexample.dao.CustomerData
-import com.revature.roomdbexample.datamodels.AppDatabase
-import com.revature.roomdbexample.datamodels.Customer
+import com.revature.roomdbexample.model.dao.CustomerData
+import com.revature.roomdbexample.model.datamodels.AppDatabase
+import com.revature.roomdbexample.model.datamodels.Customer
 import kotlinx.coroutines.InternalCoroutinesApi
 
 @InternalCoroutinesApi
@@ -13,11 +13,10 @@ class CustomerRepository(application: Application) {
     private var customerDao: CustomerData
 
     init {
-
         val database = AppDatabase.getDatabase(application)
-
         customerDao = database.customerDao()
     }
+
     val readAllCustomers: LiveData<List<Customer>> = customerDao.fetchAllCustomers()
 
     suspend fun deleteCustomerById(id: Int) {
@@ -28,5 +27,8 @@ class CustomerRepository(application: Application) {
 
         customerDao.insertCustomer(customer)
     }
+    suspend fun selectCustomerById(id: Int) {
 
+        customerDao.selectCustomerById(id)
+    }
 }

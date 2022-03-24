@@ -1,11 +1,11 @@
-package com.revature.roomdbexample.dao
+package com.revature.roomdbexample.model.dao
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.revature.roomdbexample.datamodels.Customer
+import com.revature.roomdbexample.model.datamodels.Customer
 
 @Dao
 interface CustomerData {
@@ -20,4 +20,7 @@ interface CustomerData {
     // : separates the value from the column
     @Query("DELETE FROM Customer WHERE id = :id")
     suspend fun deleteCustomerById(id:Int)
+
+    @Query("SELECT FROM Customer WHERE id = :id")
+    suspend fun selectCustomerById(id: Int)
 }

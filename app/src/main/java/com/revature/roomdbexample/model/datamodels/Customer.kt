@@ -1,4 +1,4 @@
-package com.revature.roomdbexample.datamodels
+package com.revature.roomdbexample.model.datamodels
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

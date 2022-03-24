@@ -4,8 +4,8 @@ import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
-import com.revature.roomdbexample.datamodels.Customer
-import com.revature.roomdbexample.repository.CustomerRepository
+import com.revature.roomdbexample.model.datamodels.Customer
+import com.revature.roomdbexample.model.repository.CustomerRepository
 import kotlinx.coroutines.InternalCoroutinesApi
 import kotlinx.coroutines.launch
 
@@ -23,10 +23,14 @@ class CustomerViewModel(appObj: Application) : AndroidViewModel(appObj) {
             customerRepository.insertCustomer(customer)
         }
     }
-
     fun deleteCustomerById(id: Int) {
         viewModelScope.launch {
             customerRepository.deleteCustomerById(id)
+        }
+    }
+    fun selectCustomerById(id: Int) {
+        viewModelScope.launch {
+            customerRepository.selectCustomerById(id)
         }
     }
 }
